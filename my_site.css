@@ -1,0 +1,155 @@
+/* === БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕГО САЙТА === */
+body {
+    font-family: Arial, sans-serif; /* Современный читаемый шрифт */
+    margin: 0; /* Убираем внешние отступы */
+    background-color: #ffffff; /* Белый фон */
+    color: #000000; /* Чёрный цвет текста */
+}
+
+/* === НАВИГАЦИОННОЕ МЕНЮ === */
+.navbar {
+    display: flex; /* Делаем меню горизонтальным */
+    flex-wrap: wrap; /* При сужении экрана ссылки будут переноситься */
+    justify-content: space-between; /* Разделение по краям */
+    padding: 15px 40px; /* Внутренние отступы */
+    border-bottom: 1px solid #ddd; /* Линия снизу */
+    font-size: 14px;
+    background-color: #f8f8f8; /* Светлый фон навигации */
+}
+
+.navbar a {
+    margin-right: 20px; /* Отступ между ссылками */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #000; /* Чёрный текст */
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #6c63ff; /* Подчёркиваем активную ссылку */
+    color: #6c63ff;
+}
+
+/* === ОСНОВНОЙ КОНТЕЙНЕР === */
+.container {
+    display: flex; /* Горизонтальная раскладка */
+    flex-wrap: wrap; /* Поддержка адаптивности */
+    padding: 30px 40px;
+    gap: 40px; /* Расстояние между секциями */
+}
+
+/* === ИЗОБРАЖЕНИЕ БЛЮДА === */
+.image-section img {
+    width: 100%; /* Занимает всю ширину родителя */
+    max-width: 400px; /* Но не больше 400px */
+    border-radius: 12px; /* Скруглённые края */
+}
+
+/* === ПРАВАЯ ЧАСТЬ: РЕЦЕПТ === */
+.recipe-section {
+    flex: 1; /* Занимает доступное пространство */
+    min-width: 300px; /* Минимальная ширина для удобства чтения */
+    max-width: 600px;
+}
+
+.recipe-section h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.category {
+    background-color: #ffe0b2;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap; /* Адаптация при уменьшении экрана */
+    gap: 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* === КНОПКИ === */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* Плавное изменение фона */
+}
+
+.add-favorite {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.add-shopping {
+    background-color: #4f58ff;
+    color: white;
+}
+
+.subscribe {
+    background-color: #e5e9ff;
+    color: #3c3c8a;
+}
+
+/* === СПИСОК ИНГРЕДИЕНТОВ И ОПИСАНИЕ === */
+.ingredients h2,
+.description h2 {
+    margin-bottom: 8px;
+}
+
+.ingredients ul {
+    list-style-type: none; /* Без маркеров */
+    padding-left: 0;
+}
+
+.ingredients li {
+    margin-bottom: 5px;
+}
+
+/* === ФУТЕР === */
+.footer {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* === АДАПТИВНОСТЬ: МОБИЛЬНЫЕ УСТРОЙСТВА === */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Меню в столбик */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Кнопки друг под другом */
+    }
+
+    button {
+        width: 100%; /* Ширина кнопок на всю ширину родителя */
+    }
+
+    .image-section img {
+        max-width: 100%; /* Изображение адаптируется по ширине */
+    }
+}
